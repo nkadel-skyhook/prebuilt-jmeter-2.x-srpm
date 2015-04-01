@@ -3,15 +3,16 @@ Name: jmeter
 Version: 2.13
 Release: 0.1%{?dist}
 License: Apache
-Group: Network/Daemons
+Group: Applications/Internet
 Source: apache-jmeter-%{version}.tgz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
-
-#%define buildver 5.1.0
+Provides: jmeter = %{version}-%{release}
+Requires: java
 
 %description
-ApacheMQ is a JMS Compliant Messaging System
+Apache Jmeter is a pure Java performance tester for web services, databases,
+email, and middleware.
 
 %prep
 %setup -q -n apache-jmeter-%{version}
