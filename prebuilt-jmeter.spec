@@ -28,7 +28,7 @@ cp -a . ${RPM_BUILD_ROOT}/opt/jmeter-%{version}
 ln -s --no-dereference jmeter-%{version} ${RPM_BUILD_ROOT}/opt/jmeter
 
 install --directory ${RPM_BUILD_ROOT}/etc/profile.d
-cat > /etc/profile.d/jmeter.sh << EOF
+cat > ${RPM_BUILD_ROOT}/etc/profile.d/jmeter.sh << EOF
 PATH=$PATH:/opt/jmeter/bin
 EOF
 
@@ -37,7 +37,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%license LICENSE
+#%license LICENSE
+%doc LICENSE
 %doc README NOTICE
 /opt/jmeter-%{version}
 /opt/jmeter
